@@ -12,13 +12,15 @@ public class Principal {
 				matriz[i][j] = (int) (Math.random() * 11);
 			}
 		}
-				
 		for(int i=0; i<3; i++){
-			Thread t = new ThreadController(i, matriz);
+			int vetor[] = new int[5];
+			for(int x=0; x<5; x++){
+				vetor[x] = matriz[i][x];
+			}
+			Thread t = new ThreadController(i, vetor);
 			t.start();
-		}
-		
-		
+			
+		}		
 
 	}
 

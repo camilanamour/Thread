@@ -2,12 +2,12 @@ package controller;
 
 public class ThreadController extends Thread{
 	
-	private int matriz [][] = new int [3][5];
+	private int vetor [] = new int [5];
 	private int numero;
 	
-	public ThreadController(int numero, int matriz[][]){
+	public ThreadController(int numero, int vetor[]){
 		this.numero = numero;
-		this.matriz = matriz;
+		this.vetor = vetor;
 	}
 	
 	@Override
@@ -15,14 +15,13 @@ public class ThreadController extends Thread{
 		CalculaSoma();
 	}
 
-	private void CalculaSoma() {	
-	
+	private void CalculaSoma() {
 		int soma = 0;
 		for(int x=0; x<5; x++){
-			soma+=matriz[this.numero][x];
+			soma+=vetor[x];
 		}
-		System.out.println("TID #" + getId() + ": " + soma);
-		
+		System.out.println("linha " + this.numero + ": " + soma);
+	
 	}
 
 }
