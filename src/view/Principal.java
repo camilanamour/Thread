@@ -13,11 +13,7 @@ public class Principal {
 			}
 		}
 		for(int i=0; i<3; i++){
-			int vetor[] = new int[5];
-			for(int x=0; x<5; x++){
-				vetor[x] = matriz[i][x];
-			}
-			Thread t = new ThreadController(i, vetor);
+			Thread t = new ThreadController(i, matriz[i]);
 			t.start();
 			
 		}		
